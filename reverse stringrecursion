@@ -1,0 +1,26 @@
+#For measuring the time
+import time
+
+start = time.time()
+
+#Function for the recursion to reverse the string
+def rev(c):
+    if len(c) == 0:
+        return c
+    else:
+        return rev(c[1:]) + c[0]
+#if the length of the string is 0 then it returned the string otherwise reverse function works and change the first character to last and so on
+
+
+#to read the file
+f = open("E:\\Temp\\300words.txt","r")
+for x in f:
+    print(rev(x))
+
+
+#Measuring the time
+def measure_time(input_size):
+    print('Running time {0:.6f}'.format(time.time() - start))#display the time
+
+
+measure_time(300)
